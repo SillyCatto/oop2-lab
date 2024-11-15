@@ -1,5 +1,7 @@
-public class PowerUser extends User{
-    public PowerUser(String username, String password, String email, String userID, UserType userType) {
-        super(username, password, email, userID, userType);
+import java.util.ArrayList;
+
+public class PowerUser extends NonRegularUser{
+    public PowerUser(String userID, String username, String email, String password, UserType userType) {
+        super(userID, username, email, password, userType);
     }
 }

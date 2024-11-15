@@ -1,4 +1,4 @@
-public class User {
+public abstract class User implements IReadOnly{
     private String username;
     private String password;
     private String email;
@@ -10,7 +10,7 @@ public class User {
         ADMIN,
         REGULAR
     }
-    public User(String username, String password, String email, String userID, UserType userType) {
+    public User(String userID, String username, String email, String password, UserType userType) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -61,5 +61,9 @@ public class User {
     @Override
     public String toString() {
         return userID + "," + username + "," + password + "," + email + "," + userType;
+    }
+
+    @Override
+    public void readUserData(IUserReader userReader){
     }
 }
